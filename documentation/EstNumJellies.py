@@ -41,24 +41,34 @@ class NumJellyEstimator:
 
 
     ## Set the world population
-    # \param people integer number of people on earth
+    # \param people integer number of people on earth (float greater than 0)
     def set_world_pop(self, people):
 
-        # THW: Add a test for type here
+        # Make sure we've got a float.
+        assert type(people) is float, \
+            "Error: fraction of land set must be a float."
  
-        # THW: Add a test for value here
+        # Check that the value is greater than zero. 
+        if ((frac <= 0.0)):
+            print "\nError: Fraction of land used for sugar must be greater"\
+                  +" than 0.0. /n"
+            sys.exit()
 
         # Store the fraction.
         self.worldPop = people
 
 
-    ## Set the fraction of people who love the color pink.
+    ## Set the fraction of people who love the color pink. 
+    # /param frac fraction of people who love pink (float between 0 and 1)
     def set_frac_ppl_loving_pink(self, frac):
 
         # THW: Add a test for type here
-
+        assert type(frac) is float, \
+            "Error: fraction of land set must be a float."
         # THW: Add a test for value here
-
+         if ((frac <= 0.0) or (frac >= 1.0)):
+            print "\nError: Fraction of land used for sugar must be between"\
+                  +" 0.0 and 1.0.\n"
         # Store the fraction.
         self.fracPplLovingPink = frac
 
